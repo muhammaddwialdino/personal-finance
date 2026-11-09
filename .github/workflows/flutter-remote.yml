@@ -208,7 +208,7 @@ jobs:
           )
 
           echo "Starting serve-sim with codec=$CODEC args: ${ARGS[*]}"
-          SERVE_SIM_OUT=$(npx --yes serve-sim "${ARGS[@]}" "${{ steps.sim.outputs.udid }}" || true)
+          SERVE_SIM_OUT=$(npx --yes serve-sim@0.1.44 "${ARGS[@]}" "${{ steps.sim.outputs.udid }}" || true)
           echo "serve-sim raw output: $SERVE_SIM_OUT"
 
           for i in {1..30}; do
